@@ -12,10 +12,10 @@ git add -A
 git commit -m 'deploy'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:LiYao2017/myBlog.git master:gh-pages
+git push -f git@github.com:LiYao2017/myBolg.git master:gh-pages
 
 # 链接远程仓库
-git remote add origin https://github.com/LiYao2017/myBlog.git
+git remote add origin https://github.com/LiYao2017/myBolg.git
 
 #拉取远程仓库的文件
 git pull --rebase origin master
