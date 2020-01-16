@@ -1,1 +1,1 @@
-![Alt text](../.vuepress/img/resume.png)  
+![Alt text](http://file.liyao1994.top/resume.png)  

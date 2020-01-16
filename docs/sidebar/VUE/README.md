@@ -101,7 +101,7 @@ class Vue{    //创建一个VUE类
 
 >这里我们看一张图：   (从一个视频里面截图过来的，具体啥课不记得了，一个公开课，只是保存了一下，做了笔记)  
 
-![Alt text](../../.vuepress/img/vueDefinpropoty.png)  
+![Alt text](http://file.liyao1994.top/vueDefinpropoty.png)  
 
 从数据劫持中，我们能够猜到发布者肯定是在 set方法中，去通知数据进行更新，那么我们需要做的就是去添加订阅者，或者是观察者。  
 首先上代码：  

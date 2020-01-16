@@ -7,7 +7,7 @@ module.exports = {
 	 * Ref：https://v1.vuepress.vuejs.org/config/#title
 	 */
 	title: '李尧技术博客',
-	// base: '/myDocs/',
+	// base: '/myBlog/',
 	/**
 	 * Ref：https://v1.vuepress.vuejs.org/config/#description
 	 */
@@ -67,7 +67,8 @@ module.exports = {
 					title: 'HTML', 
 					children: [
 						'/sidebar/HTML/',
-						'/sidebar/HTML/using-vue'					
+						'/sidebar/HTML/using-vue',
+						'/sidebar/HTML/HTML5新特性'
 					]
 				},
 				{
