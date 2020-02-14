@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>vue数据响应式的实现 | 李尧技术博客</title>
+    <meta name="description" content="myBlog">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.7d12f3d4.css" as="style"><link rel="preload" href="/assets/js/app.db5fb402.js" as="script"><link rel="preload" href="/assets/js/2.c24a2de0.js" as="script"><link rel="preload" href="/assets/js/22.37ba754b.js" as="script"><link rel="prefetch" href="/assets/js/10.f77a8e98.js"><link rel="prefetch" href="/assets/js/11.7f933877.js"><link rel="prefetch" href="/assets/js/12.a56b9a6c.js"><link rel="prefetch" href="/assets/js/13.0c4c5845.js"><link rel="prefetch" href="/assets/js/14.844c7739.js"><link rel="prefetch" href="/assets/js/15.a67c9db5.js"><link rel="prefetch" href="/assets/js/16.c8b53757.js"><link rel="prefetch" href="/assets/js/17.3c2ecec7.js"><link rel="prefetch" href="/assets/js/18.77469b91.js"><link rel="prefetch" href="/assets/js/19.ae79786b.js"><link rel="prefetch" href="/assets/js/20.eac46a37.js"><link rel="prefetch" href="/assets/js/21.e070b06d.js"><link rel="prefetch" href="/assets/js/23.8732597c.js"><link rel="prefetch" href="/assets/js/24.22b92f61.js"><link rel="prefetch" href="/assets/js/25.1f94e81d.js"><link rel="prefetch" href="/assets/js/26.c1b21e1b.js"><link rel="prefetch" href="/assets/js/27.f0e2b455.js"><link rel="prefetch" href="/assets/js/28.85bf6cbb.js"><link rel="prefetch" href="/assets/js/29.d4bba7be.js"><link rel="prefetch" href="/assets/js/3.4b33e3ee.js"><link rel="prefetch" href="/assets/js/30.df5bee9d.js"><link rel="prefetch" href="/assets/js/4.65144aa1.js"><link rel="prefetch" href="/assets/js/5.3a30a02f.js"><link rel="prefetch" href="/assets/js/6.6ad79ddf.js"><link rel="prefetch" href="/assets/js/7.3a5ee693.js"><link rel="prefetch" href="/assets/js/8.3d7de5e6.js"><link rel="prefetch" href="/assets/js/9.156d964d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7d12f3d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">李尧技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/sidebar/" class="nav-link router-link-active">学习-进阶</a></div><div class="nav-item"><a href="/config/" class="nav-link">难点-解析</a></div><div class="nav-item"><a href="/accumulate/" class="nav-link">每日·积累</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/sidebar/" class="nav-link router-link-active">学习-进阶</a></div><div class="nav-item"><a href="/config/" class="nav-link">难点-解析</a></div><div class="nav-item"><a href="/accumulate/" class="nav-link">每日·积累</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>JavaScript</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Vue</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sidebar/VUE/" class="active sidebar-link">vue数据响应式的实现</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sidebar/VUE/#第一步我们做数据劫持" class="sidebar-link">第一步我们做数据劫持</a></li><li class="sidebar-sub-header"><a href="/sidebar/VUE/#利用的发布订阅模式" class="sidebar-link">利用的发布订阅模式</a></li></ul></li><li><a href="/sidebar/VUE/项目优化.html" class="sidebar-link">vue 项目优化</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>jenkins</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="vue数据响应式的实现"><a href="#vue数据响应式的实现" class="header-anchor">#</a> vue数据响应式的实现</h1> <blockquote><blockquote><p>涉及的知识点defineProperty
+简介：Object.defineProperty()直接在对象上定义新属性，或修改对象上的现有属性，然后返回对象。</p></blockquote></blockquote> <div class="language- extra-class"><pre class="language-text"><code>用法：
+Object.defineProperty(obj, prop, descriptor)
+obj ： 要在其上定义属性的对象。
+prop ： Symbol要定义或修改的属性的名称或名称。
+descriptor ： 定义或修改的属性的描述符。
+
+</code></pre></div><p>描述符又分为：数据描述符和访问器描述符。</p> <p>数据和访问描述符都是对象。它们共享以下可选键（在使用Object.defineProperty（）定义属性的情况下，默认值为）：</p> <ol><li><p>configurable ：默认为false。
+true当且仅当此属性描述符的类型可以更改，并且该属性可以从相应的对象中删除时。</p></li> <li><p>enumerable ：  默认为false。
+true当且仅当在枚举相应对象的属性时显示此属性。</p></li></ol> <p>数据描述符还具有以下可选键：</p> <ol><li><p>value ： 默认为undefined
+与属性关联的值。可以是任何有效的JavaScript值（数字，对象，函数等）。</p></li> <li><p>writable ： 默认为false。
+true当且仅当与属性关联的值可以使用赋值运算符更改时。</p></li></ol> <p>访问器描述符：</p> <ol><li>get ： 默认为undefined。
+一个给属性提供getter的方法，如果没有getter则为undefined。该方法返回值被用作属性值。默认为undefined。</li> <li>set ：默认为undefined
+一个给属性提供setter的方法，如果没有setter则为undefined。该方法将接受唯一参数，并将该参数的新值分配给该属性。</li></ol> <p>简单一点就是：</p> <ol><li>简单点就是 设置属性的值value，</li> <li>是否可操作属性值 writable，</li> <li>是否可修改配置configurable如果值为false descriptor内的属性都不可操作）</li> <li>是否可枚举enumerable</li> <li>get访问触发，返回值作为访问的值</li> <li>set修改时触发，该方法将接受唯一参数，并将该参数的新值分配给该属性</li></ol> <blockquote><blockquote><p>接下来我们撸代码，用于去理解</p></blockquote></blockquote> <h2 id="第一步我们做数据劫持"><a href="#第一步我们做数据劫持" class="header-anchor">#</a> 第一步我们做数据劫持</h2> <div class="language- extra-class"><pre class="language-text"><code>THML:
+&lt;script src='VUEs.js' type=&quot;text/javascript&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; '&gt;
+	let vues = new Vue({
+		data:{
+		   name:'我是未更新前的值',
+		   obj : {
+			   age : 18
+		   }				   
+		}
+	})
+	vues.$data.name = '我是更新的新值'
+	vues.$data.obj.age = '19'
+	console.log(vues.$data.name)   //'我是更新的新值'
+	console.log(vues.$data.obj.age)  //19
+&lt;/script&gt;
+
+VUEs.js
+
+class Vue{    //创建一个VUE类
+	constructor(option) {
+	
+		this.$data = option.data;		
+		this.obsere(this.$data) 
+	}
+	obsere(ObjData){    //数据响应化，装逼的词语叫做数据劫持
+		if(!ObjData || typeof(ObjData) !== 'object'){return}
+		
+		Object.keys(ObjData).forEach((key)=&gt;{  //去监听绑定每一个属性
+			this.defindReactive( ObjData , key , ObjData[key] )
+		})
+	}
+	defindReactive( ObjData , key ,oldval){   //进行属性的监听和赋值 
+		this.obsere(oldval); //这里做递归,用来进行深层次的赋值
+	
+		Object.defineProperty(ObjData , key ,{
+			get(){
+				return oldval
+			},
+			set(newVal){
+				if(newVal === oldval){return}
+				oldval = newVal;    //用于赋值给get返回
+				console.log(`更新了值: ${newVal}`)				
+			}
+		})
+		
+		
+	}
+}
+
+</code></pre></div><h2 id="利用的发布订阅模式"><a href="#利用的发布订阅模式" class="header-anchor">#</a> 利用的发布订阅模式</h2> <p>首先我们需要明白一个事情vue的数据绑定的原理，我大概的理解是：<br>
+利用了definpropoty 数据劫持，每个属性定义了get ,set方法，去监听属性的变化，当属性变化时，<strong>通知</strong>那些需要更新的地方去更新</p> <blockquote><p>这里我们看一张图：   (从一个视频里面截图过来的，具体啥课不记得了，一个公开课，只是保存了一下，做了笔记)</p></blockquote> <p><img src="http://file.liyao1994.top/vueDefinpropoty.png" alt="Alt text"></p> <p>从数据劫持中，我们能够猜到发布者肯定是在 set方法中，去通知数据进行更新，那么我们需要做的就是去添加订阅者，或者是观察者。<br>
+首先上代码：</p> <div class="language- extra-class"><pre class="language-text"><code>慢慢迁移，敬请期待
+
+</code></pre></div><p>慢慢迁移，敬请期待</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/accumulate/宏观任务和微观任务.html" class="prev">宏观任务和微观任务的探讨</a></span> <span class="next"><a href="/sidebar/VUE/项目优化.html">vue 项目优化</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.db5fb402.js" defer></script><script src="/assets/js/2.c24a2de0.js" defer></script><script src="/assets/js/22.37ba754b.js" defer></script>
+  </body>
+</html>

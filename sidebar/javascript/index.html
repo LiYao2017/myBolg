@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>聊聊深拷贝和浅拷贝 | 李尧技术博客</title>
+    <meta name="description" content="myBlog">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.7d12f3d4.css" as="style"><link rel="preload" href="/assets/js/app.db5fb402.js" as="script"><link rel="preload" href="/assets/js/2.c24a2de0.js" as="script"><link rel="preload" href="/assets/js/25.1f94e81d.js" as="script"><link rel="prefetch" href="/assets/js/10.f77a8e98.js"><link rel="prefetch" href="/assets/js/11.7f933877.js"><link rel="prefetch" href="/assets/js/12.a56b9a6c.js"><link rel="prefetch" href="/assets/js/13.0c4c5845.js"><link rel="prefetch" href="/assets/js/14.844c7739.js"><link rel="prefetch" href="/assets/js/15.a67c9db5.js"><link rel="prefetch" href="/assets/js/16.c8b53757.js"><link rel="prefetch" href="/assets/js/17.3c2ecec7.js"><link rel="prefetch" href="/assets/js/18.77469b91.js"><link rel="prefetch" href="/assets/js/19.ae79786b.js"><link rel="prefetch" href="/assets/js/20.eac46a37.js"><link rel="prefetch" href="/assets/js/21.e070b06d.js"><link rel="prefetch" href="/assets/js/22.37ba754b.js"><link rel="prefetch" href="/assets/js/23.8732597c.js"><link rel="prefetch" href="/assets/js/24.22b92f61.js"><link rel="prefetch" href="/assets/js/26.c1b21e1b.js"><link rel="prefetch" href="/assets/js/27.f0e2b455.js"><link rel="prefetch" href="/assets/js/28.85bf6cbb.js"><link rel="prefetch" href="/assets/js/29.d4bba7be.js"><link rel="prefetch" href="/assets/js/3.4b33e3ee.js"><link rel="prefetch" href="/assets/js/30.df5bee9d.js"><link rel="prefetch" href="/assets/js/4.65144aa1.js"><link rel="prefetch" href="/assets/js/5.3a30a02f.js"><link rel="prefetch" href="/assets/js/6.6ad79ddf.js"><link rel="prefetch" href="/assets/js/7.3a5ee693.js"><link rel="prefetch" href="/assets/js/8.3d7de5e6.js"><link rel="prefetch" href="/assets/js/9.156d964d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7d12f3d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">李尧技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/sidebar/" class="nav-link router-link-active">学习-进阶</a></div><div class="nav-item"><a href="/config/" class="nav-link">难点-解析</a></div><div class="nav-item"><a href="/accumulate/" class="nav-link">每日·积累</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/sidebar/" class="nav-link router-link-active">学习-进阶</a></div><div class="nav-item"><a href="/config/" class="nav-link">难点-解析</a></div><div class="nav-item"><a href="/accumulate/" class="nav-link">每日·积累</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sidebar/javascript/" class="active sidebar-link">聊聊深拷贝和浅拷贝</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sidebar/javascript/#什么是深拷贝和浅拷贝" class="sidebar-link">什么是深拷贝和浅拷贝</a></li><li class="sidebar-sub-header"><a href="/sidebar/javascript/#代码分析-深拷贝" class="sidebar-link">代码分析 - 深拷贝</a></li></ul></li><li><a href="/sidebar/javascript/this的理解.html" class="sidebar-link">this的理解</a></li><li><a href="/sidebar/javascript/函数预编译.html" class="sidebar-link">函数的预编译AO,GO</a></li><li><a href="/accumulate/宏观任务和微观任务.html" class="sidebar-link">宏观任务和微观任务的探讨</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>jenkins</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="聊聊深拷贝和浅拷贝"><a href="#聊聊深拷贝和浅拷贝" class="header-anchor">#</a> 聊聊深拷贝和浅拷贝</h1> <h2 id="什么是深拷贝和浅拷贝"><a href="#什么是深拷贝和浅拷贝" class="header-anchor">#</a> 什么是深拷贝和浅拷贝</h2> <ol><li>浅拷贝：将一个对象(包括数组)的引用赋值给一个新对象，这时新对象也只是原对象的引用</li> <li>深拷贝：创建一个新的对象(包括数组),将原对象的各个属性值拷贝到新的对象，两个对象都是全新的引用，互不相关,操作也就互不影响了。</li></ol> <hr> <p>这里提一下 原始值 和 引用值</p> <ol><li>原始值：存储在栈中的直接的数据，可以直接访问，存储的是实实在在的值。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>  Undefined，Stirng，Boolean，Null, Number
+   注意：原始值当直接赋值时是等于 复制一个全新的值，两则修改没有任何联系。
+</code></pre></div><ol start="2"><li>引用值：存储在栈中的名称，只是一个对应堆中的的一个引用地址，每创建一个引用值，则会响应的在堆中创建新的对应空间。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>Object，Function，Array，Date，RegExp 
+ 注意：引用值直接赋值，只是创建一个新的引用地址，它们所对应的空间是一个;
+ 所以修改其中一个，等于直接操纵的一个空间，
+ 所对应的其他的值也就随之变了。
+</code></pre></div><hr> <h2 id="代码分析-深拷贝"><a href="#代码分析-深拷贝" class="header-anchor">#</a> 代码分析 - 深拷贝</h2> <p>浅拷贝不列代码了。<br>
+根据深拷贝的原理，列举实现思路</p> <div class="language- extra-class"><pre class="language-text"><code>深拷贝的思路：
+1.便利对象判断是否是原始值
+2.判断是否是数组还是对象
+3.建立新的响应的数组或对象
+4.递归，一直拷贝至最深的节点。
+</code></pre></div><p>列举jq.extend() 方法来说明，下面是源码：</p> <div class="language- extra-class"><pre class="language-text"><code>jQuery.fn.extend = jQuery.extend = function() {
+		var target = arguments[0] || {};
+		var length = arguments.length;
+		var i = 1;
+		var deep = false;   //是否是深拷贝
+		var option, name,copy,src,copyIsArray,clone;
+        if (typeof target === &quot;boolean&quot;) {       //处理深度复制的情况 
+        	deep = target; //是否是深拷贝
+			target = arguments[1];
+			i = 2;
+        }
+		if (typeof target !== &quot;object&quot;) {   当目标是字符串或其他东西时
+			target = {};
+		}
+		//参数的个数 1
+		if (length === i) {
+			target = this;  
+			i--;
+		}
+
+		//浅拷贝  深拷贝
+		for (; i &lt; length; i++) {
+			if ((option = arguments[i]) != null) {   //只处理非空/未定义 的值
+				for (name in option) {
+					copy = option[name];
+					src = target[name];
+					if(deep &amp;&amp; (jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)))){
+						if(copyIsArray){
+							copyIsArray = false;
+							clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
+						} else {
+							clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+						}
+						target[name] = jQuery.extend(deep, clone, copy);
+					} else if(copy != undefined){
+						target[name] = copy;
+					}
+				}
+			}
+		}
+		return target;
+	}
+
+	
+</code></pre></div><p>调用：</p> <div class="language- extra-class"><pre class="language-text"><code>// 调用：
+var ret = {name:&quot;max&quot;,list:{age:&quot;30&quot;}};
+var res = {list:{sex:&quot;女&quot;},age:'18'};
+//浅拷贝 以第一个参数为控制 ，false 或则不传 则为 浅拷贝 ，true则为深拷贝
+var objs = $.extend({},ret,res);  
+console.log(objs);
+
+//任意对象扩展
+var obj = $.extend(true,{}, ret, res);
+console.log(obj);
+</code></pre></div><h3 id="分步解析"><a href="#分步解析" class="header-anchor">#</a> 分步解析</h3> <ol><li>做好深浅拷贝的划分（属于优化部分）</li></ol> <div class="language- extra-class"><pre class="language-text"><code>var target = arguments[0] || {};  // target为最终需要返回的对象
+var length = arguments.length;    //确定需要合并拷贝的对象个数
+var i = 1;						// 除了需要合并的对象以外，其余的需要进行拷贝(遍历)
+</code></pre></div><ol start="2"><li>便利对象判断是否是原始值 ，如果是原始值 则直接赋予该属性</li></ol> <div class="language- extra-class"><pre class="language-text"><code>for (name in option) {
+	copy = option[name]; 
+	src = target[name];
+	if(deep &amp;&amp; (jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)))){  //如果深拷贝deep,并且是引用值
+		if(copyIsArray){
+			copyIsArray = false;
+			clone = src &amp;&amp; jQuery.isArray(src) ? src : [];
+		} else {
+			clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+		}
+		target[name] = jQuery.extend(deep, clone, copy);
+	} else if(copy != undefined){   //如果不是引用值，就直接添加属性入target
+		target[name] = copy;
+	}
+}
+</code></pre></div><ol start="3"><li>如果是引用值则 建立新的对象(数组，或对象) ，并去递归，每一次递归都会检查值得属性并做浅拷贝</li></ol> <div class="language- extra-class"><pre class="language-text"><code>copy = option[name]; 
+src = target[name];
+if(deep &amp;&amp; (jQuery.isPlainObject(copy) || (copyIsArray = jQuery.isArray(copy)))){  //如果深拷贝deep,并且是引用值
+	if(copyIsArray){  //如果是数组
+		copyIsArray = false;
+		clone = src &amp;&amp; jQuery.isArray(src) ? src : [];   //建立数组再去递归
+	} else {  //如果是对象 ，建立对象去递归
+		clone = src &amp;&amp; jQuery.isPlainObject(src) ? src : {};
+	}
+	target[name] = jQuery.extend(deep, clone, copy);
+}
+</code></pre></div><ol start="4"><li>直到所有的参数值进行合并，并合并到target上，最后返回新的对象</li></ol> <div class="language- extra-class"><pre class="language-text"><code>return target;
+
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sidebar/CSS/" class="prev">CSS水平居中与垂直居中，多列布局</a></span> <span class="next"><a href="/sidebar/javascript/this的理解.html">this的理解</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.db5fb402.js" defer></script><script src="/assets/js/2.c24a2de0.js" defer></script><script src="/assets/js/25.1f94e81d.js" defer></script>
+  </body>
+</html>

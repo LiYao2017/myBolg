@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>this的理解 | 李尧技术博客</title>
+    <meta name="description" content="myBlog">
+    <meta name="theme-color" content="#3eaf7c">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.7d12f3d4.css" as="style"><link rel="preload" href="/assets/js/app.db5fb402.js" as="script"><link rel="preload" href="/assets/js/2.c24a2de0.js" as="script"><link rel="preload" href="/assets/js/26.c1b21e1b.js" as="script"><link rel="prefetch" href="/assets/js/10.f77a8e98.js"><link rel="prefetch" href="/assets/js/11.7f933877.js"><link rel="prefetch" href="/assets/js/12.a56b9a6c.js"><link rel="prefetch" href="/assets/js/13.0c4c5845.js"><link rel="prefetch" href="/assets/js/14.844c7739.js"><link rel="prefetch" href="/assets/js/15.a67c9db5.js"><link rel="prefetch" href="/assets/js/16.c8b53757.js"><link rel="prefetch" href="/assets/js/17.3c2ecec7.js"><link rel="prefetch" href="/assets/js/18.77469b91.js"><link rel="prefetch" href="/assets/js/19.ae79786b.js"><link rel="prefetch" href="/assets/js/20.eac46a37.js"><link rel="prefetch" href="/assets/js/21.e070b06d.js"><link rel="prefetch" href="/assets/js/22.37ba754b.js"><link rel="prefetch" href="/assets/js/23.8732597c.js"><link rel="prefetch" href="/assets/js/24.22b92f61.js"><link rel="prefetch" href="/assets/js/25.1f94e81d.js"><link rel="prefetch" href="/assets/js/27.f0e2b455.js"><link rel="prefetch" href="/assets/js/28.85bf6cbb.js"><link rel="prefetch" href="/assets/js/29.d4bba7be.js"><link rel="prefetch" href="/assets/js/3.4b33e3ee.js"><link rel="prefetch" href="/assets/js/30.df5bee9d.js"><link rel="prefetch" href="/assets/js/4.65144aa1.js"><link rel="prefetch" href="/assets/js/5.3a30a02f.js"><link rel="prefetch" href="/assets/js/6.6ad79ddf.js"><link rel="prefetch" href="/assets/js/7.3a5ee693.js"><link rel="prefetch" href="/assets/js/8.3d7de5e6.js"><link rel="prefetch" href="/assets/js/9.156d964d.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.7d12f3d4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">李尧技术博客</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/sidebar/" class="nav-link router-link-active">学习-进阶</a></div><div class="nav-item"><a href="/config/" class="nav-link">难点-解析</a></div><div class="nav-item"><a href="/accumulate/" class="nav-link">每日·积累</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/sidebar/" class="nav-link router-link-active">学习-进阶</a></div><div class="nav-item"><a href="/config/" class="nav-link">难点-解析</a></div><div class="nav-item"><a href="/accumulate/" class="nav-link">每日·积累</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>HTML</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>CSS</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>JavaScript</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/sidebar/javascript/" class="sidebar-link">聊聊深拷贝和浅拷贝</a></li><li><a href="/sidebar/javascript/this的理解.html" class="active sidebar-link">this的理解</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/sidebar/javascript/this的理解.html#this的指向" class="sidebar-link">this的指向</a></li></ul></li><li><a href="/sidebar/javascript/函数预编译.html" class="sidebar-link">函数的预编译AO,GO</a></li><li><a href="/accumulate/宏观任务和微观任务.html" class="sidebar-link">宏观任务和微观任务的探讨</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>Vue</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>webpack</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>docker</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>nginx</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>jenkins</span> <span class="arrow right"></span></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="this的理解"><a href="#this的理解" class="header-anchor">#</a> this的理解</h1> <h2 id="this的指向"><a href="#this的指向" class="header-anchor">#</a> this的指向</h2> <ol><li>函数调用</li> <li>全局作用域里this的指向</li> <li>call/apply/bind 可以改变函数运行时的this指向</li> <li>es6箭头函数</li></ol> <h3 id="函数调用时-this的指向"><a href="#函数调用时-this的指向" class="header-anchor">#</a> 函数调用时 this的指向</h3> <ol><li>函数预编译时 this的指向是指向于window</li></ol> <div class="language- extra-class"><pre class="language-text"><code>function fun(a,b){
+	var a =1;
+	console.log(this)  //window
+	console.log(this.a) //undefined
+}
+fun(2)
+
+此时的AO (预编译时)
+{
+	arguments : [2,undefined],
+	this: window,   
+	a:2
+	b:undefined
+}
+
+</code></pre></div><ol start="2"><li>函数被调用时的this指向<br>
+列子一</li></ol> <div class="language- extra-class"><pre class="language-text"><code>
+&lt;script&gt;
+function fun(){
+	console.log(this)
+}
+fun()  // window 
+
+解析一下：
+因为此时fun是在全局的环境下 *被* 调用的。 
+其实声明函数时 等于在window上面声明了该函数
+此时的： fun()  === window.fun()
+&lt;/script&gt;
+</code></pre></div><p>列子二</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+var obj = {
+	fun : function(){
+		console.log(this.name)
+	},
+	name: '111'
+}
+obj.fun()   // 111
+
+解析一下： 同理，此时fun是被obj调用，所以此时的this指向的是obj
+
+&lt;/script&gt;
+</code></pre></div><p>列子三</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+var obj = {
+	fun : function(){
+		console.log(this)
+	},
+	name: '111',				
+	funTwo : function(callBack){
+		callBack()
+	}
+}
+obj.funTwo(obj.fun)    //window
+ 
+ 解析一下：
+1.  funTwo 函数接受的参数是一个函数 是obj.fun ，但此时并没有被调用，只是将这个函数的地址传递了过去，
+此时依然处于预编译的状态，this指向的是window
+2.  在调用时 callBack调用了 fun指向的地址，此时调用的函数与obj并没有直接调用关系，所以this依然指向的是window
+&lt;/script&gt;
+
+</code></pre></div><p>注意：</p> <ol><li>在严格模式下，this将保持他进入执行环境时的值，所以下面的this将会默认为undefined</li></ol> <div class="language- extra-class"><pre class="language-text"><code>function fun(){
+  &quot;use strict&quot;; // 这里是严格模式
+  return this;  
+}
+fun() === undefined; // true
+</code></pre></div><h3 id="全局作用域里this的指向"><a href="#全局作用域里this的指向" class="header-anchor">#</a> 全局作用域里this的指向</h3> <p>这里不提，上面已经提到了，全局作用域里时this会默认指向window</p> <h3 id="call-apply-bind-可以改变函数运行时的this指向"><a href="#call-apply-bind-可以改变函数运行时的this指向" class="header-anchor">#</a> call/apply/bind 可以改变函数运行时的this指向</h3> <p>call/apply : 可以指定函数内部this的指向（即函数执行时所在的作用域），然后在所指定的作用域中，调用该函数。
+bind : bind方法用于将函数体内的this绑定到某个对象，然后返回一个新函数。</p> <p>call/apply : 两个作用一样，区别在于第二个参数，apply传参的是数组</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+var name = '111';
+var obj = {
+	name : '222'
+}
+		
+function fun(a,b){
+	console.log(a);
+	console.log(b);
+	console.log(this.name)
+}
+fun()  // undefined undefined 111 
+fun.call(obj,1,2) // 此时的 this 指向就是obj   1,2,222
+fun.apply(obj,[1,2])  //1,2,222 
+&lt;/script&gt;
+</code></pre></div><p>bind : bind方法用于将函数体内的this绑定到某个对象，然后返回一个新函数。</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;script&gt;
+var name = '111';
+var obj = {
+	name : '222'
+}
+		
+function fun(a,b){
+	console.log(a);
+	console.log(b);
+	console.log(this.name)
+}
+
+var funTwo = fun.bind(obj)
+fun()  // undefined undefined 111 
+funTwo(1,2)  //1,2,222   此时的 this 指向就是obj
+&lt;/script&gt;
+</code></pre></div><p>注意：</p> <ol><li>call/apply 改变this指向以后并会立马执行</li> <li>bind改变this以后会返回新的函数，并不会立马执行</li></ol> <h3 id="es6箭头函数-的this"><a href="#es6箭头函数-的this" class="header-anchor">#</a> es6箭头函数 的this</h3> <p>重点（关于this方面的）：</p> <ol><li>es6箭头函数没有自己的this,函数里的this是外层代码的this</li> <li>箭头函数的this是在定义函数时绑定的，不是在执行过程中绑定的。</li> <li>箭头函数this是继承自父执行上下文，不是调用时的this。</li></ol> <div class="language- extra-class"><pre class="language-text"><code>//普通函数
+function fun(){
+	console.log(this)
+}
+fun() //window
+
+//箭头函数
+let fun = () =&gt;{
+	console.log(this)
+}
+fun() // window 因为此时fun是在全局定义的，父作用域 也就是父作用域的上下文 是window
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>var obj = {
+	fun : () =&gt;{
+		console.log(this)
+	},
+	name: '111',				
+	funTwo : (callBack) = &gt;{
+		callBack()
+	}
+}
+obj.funTwo(obj.fun)   //window
+
+//解析一下：
+箭头函数的this是定义时绑定的，就是this是继承自父执行上下文
+此时的 fun 与 funTwo本身所在的对象是obj，是以key/value形式而已，obj父执行的上下文为window
+
+</code></pre></div><p>最后一个列子</p> <div class="language- extra-class"><pre class="language-text"><code>//普通函數
+var name = '111';
+var obj = {
+	name : '222',
+	fun : function(){
+		setTimeout(function(){
+			console.log(this.name) 
+		},100)
+	}
+}
+obj.fun()  //111   
+
+解析：obj调用函数fun，此时fun里面的this是 obj，但是setTimeout是全局的window上的方法，
+所以其实等于 window.setTimeout()  所以里面的this指向了window
+
+//箭頭函數
+var name = '111';
+var obj = {
+	name : '222',
+	fun : function(){
+		setTimeout(()=&gt;{
+			console.log(this.name) 
+		},100)
+	}
+}
+obj.fun()  //222
+
+解析：obj调用函数fun，此时fun里面的this是 obj，但是setTimeout是全局的window上的方法，
+但是 setTimeout方法在定义时的父执行上下文this为 obj ，所以此时的this为 obj
+
+</code></pre></div><p>注意：
+1.箭头函数通过call和apply调用，不会改变this指向，只会传入参数</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/sidebar/javascript/" class="prev router-link-active">聊聊深拷贝和浅拷贝</a></span> <span class="next"><a href="/sidebar/javascript/函数预编译.html">函数的预编译AO,GO</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.db5fb402.js" defer></script><script src="/assets/js/2.c24a2de0.js" defer></script><script src="/assets/js/26.c1b21e1b.js" defer></script>
+  </body>
+</html>
